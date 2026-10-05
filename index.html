@@ -3,30 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paula Maia | Especialista em Sono Infantil</title>
+    <title>Paula Maia | Especialista Sono Infantil</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon.png">
-    
-    <script defer src="https://t.contentsquare.net/uxa/dea7adaba0220.js"></script>
-    
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1742793370309567');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1742793370309567&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
-
     <style>
         :root {
             --text-dark: #292238;
@@ -36,8 +14,8 @@
             --title-color: #62598d;
             --white: #ffffff;
             --border-color: #ebdff0;
-            --whatsapp-color: #25d366;
-            --whatsapp-hover: #20ba5a;
+            --footer-bg: #292238;
+            --footer-text: #c2b5d1;
         }
 
         * {
@@ -51,498 +29,1100 @@
             font-family: 'Montserrat', sans-serif;
             color: var(--text-dark);
             line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .funnel-container {
-            max-width: 680px;
-            width: 100%;
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 24px;
-            box-shadow: 0 15px 40px rgba(139, 121, 232, 0.15);
-            border: 2px solid var(--border-color);
-            text-align: center;
-            position: relative;
-        }
-
-        .funnel-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 0.95rem;
-            color: var(--purple-hover);
-            margin-bottom: 15px;
-            letter-spacing: 0.5px;
-        }
-
-        /* Barra de Progresso Superior */
-        .progress-bar-container {
-            width: 100%;
-            height: 6px;
-            background: var(--purple-light);
-            border-radius: 3px;
-            margin-bottom: 25px;
-            overflow: hidden;
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            background: var(--purple-hover);
-            width: 25%;
-            transition: width 0.4s ease;
-        }
-
-        /* Passos do Funil */
-        .step-content {
-            display: none;
+            overflow-x: hidden;
+            padding-top: 40px;
             text-align: left;
-        }
-
-        .step-content.active {
-            display: block;
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         h1, h2, h3 {
             font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* Traço horizontal padrão */
+        .section-header-line {
+            width: 60px;
+            height: 4px;
+            background-color: var(--title-color);
+            margin: 0 auto 15px auto;
+            border-radius: 2px;
+        }
+
+        /* Top Announcement Bar - Fixa no Topo */
+        .announcement-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            background: linear-gradient(135deg, #7562dc 0%, #9b89f5 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(139, 121, 232, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            background: transparent;
+        }
+
+        .hero-top-brand {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--purple-hover);
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+            text-align: left;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--purple-light);
+            color: var(--purple-hover);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            border: 1px solid rgba(139, 121, 232, 0.2);
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1.2;
+            text-align: left;
+        }
+
+        .hero-image {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            background: transparent;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            width: 340px;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(139, 121, 232, 0.2);
+            border: 3px solid var(--white);
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
             color: var(--title-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            letter-spacing: 0.3px;
+            text-align: left;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        @keyframes pulse-soft {
+            0% { box-shadow: 0 8px 25px rgba(139, 121, 232, 0.4); }
+            50% { box-shadow: 0 12px 35px rgba(139, 121, 232, 0.7); }
+            100% { box-shadow: 0 8px 25px rgba(139, 121, 232, 0.4); }
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #9b89f5 0%, #7562dc 100%);
+            color: var(--white);
+            padding: 18px 36px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(139, 121, 232, 0.4);
+            display: inline-block;
+            text-align: center;
+            animation: pulse-soft 3s infinite;
+        }
+
+        .btn:hover {
+            opacity: 0.95;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(139, 121, 232, 0.8);
+        }
+
+        .hero-price-tip {
+            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-top: 10px;
+            font-weight: 500;
+            display: block;
+            text-align: left;
+        }
+
+        /* Welcome Section */
+        .welcome {
+            background: radial-gradient(circle at 80% 50%, rgba(225, 205, 245, 0.4) 0%, transparent 60%),
+                        radial-gradient(circle at 20% 80%, rgba(245, 225, 235, 0.4) 0%, transparent 60%),
+                        #faf5fc;
+            padding: 80px 20px;
+            text-align: left;
+        }
+
+        .welcome-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+            gap: 50px;
+            text-align: left;
+        }
+
+        .welcome-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .welcome-image img {
+            max-width: 100%;
+            width: 450px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(139, 121, 232, 0.12);
+        }
+
+        .welcome-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .welcome-content h2 {
+            font-size: 2.1rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--title-color);
+            text-align: left;
+        }
+
+        .welcome-content p {
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        /* Secção de Depoimentos */
+        .testimonials-video-carousel {
+            padding: 90px 20px;
+            text-align: center;
+            background: radial-gradient(circle at 50% 100%, rgba(225, 205, 245, 0.5) 0%, #faf5fc 70%);
+        }
+
+        .testimonials-video-carousel h2 {
+            font-size: 2.1rem;
+            margin-bottom: 8px;
+            color: var(--title-color);
+            line-height: 1.3;
             text-align: center;
         }
 
-        h1 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            line-height: 1.3;
+        .testimonials-video-carousel > p {
+            font-size: 1.05rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: var(--text-dark);
+            text-align: center;
         }
 
-        p {
-            font-size: 0.95rem;
+        .carousel-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1050px;
+            margin: 0 auto 40px auto;
+            flex-wrap: wrap;
+        }
+
+        .phone-mockup {
+            width: 270px;
+            background: #2b2336;
+            border-radius: 38px;
+            padding: 14px;
+            position: relative;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 12px;
+            background: #1a1421;
+            border-radius: 10px;
+            z-index: 10;
+        }
+
+        .phone-mockup.side {
+            box-shadow: 0 15px 30px rgba(139, 121, 232, 0.15);
+            border: 3px solid #7562dc;
+            opacity: 0.75;
+            transform: scale(0.92);
+        }
+
+        .phone-mockup.side:hover {
+            opacity: 0.95;
+            transform: scale(0.95);
+        }
+
+        .phone-mockup.center {
+            box-shadow: 0 25px 50px rgba(139, 121, 232, 0.35);
+            border: 4px solid #9b89f5;
+            z-index: 2;
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .phone-screen {
+            width: 100%;
+            background: #000;
+            border-radius: 28px;
+            overflow: hidden;
+            padding-top: 25px;
+            position: relative;
+        }
+
+        .phone-screen video {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            border-radius: 12px;
+            outline: none;
+            display: block;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 65px;
+            height: 65px;
+            background: rgba(117, 98, 220, 0.85);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 5;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .play-overlay::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-left: 20px solid #ffffff;
+            margin-left: 4px;
+        }
+
+        .phone-screen video:playing ~ .play-overlay {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .video-caption {
+            margin-top: 14px;
+            text-align: center;
+        }
+
+        .video-caption strong {
+            display: block;
+            font-size: 1.05rem;
+            color: #ffffff;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .video-caption span {
+            font-size: 0.88rem;
+            color: #dcd0f0;
+            font-weight: 500;
+            margin-top: 2px;
+            display: inline-block;
+        }
+
+        /* Conheça a Especialista */
+        .about {
+            padding: 80px 20px;
+            background: radial-gradient(circle at 10% 50%, rgba(225, 205, 245, 0.5) 0%, transparent 50%),
+                        radial-gradient(circle at 90% 80%, rgba(245, 225, 235, 0.5) 0%, transparent 50%),
+                        #faf5fc;
+            text-align: left;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 950px;
+            margin: 0 auto;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .about-photo-box {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-photo-box img {
+            width: 280px;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(139, 121, 232, 0.15);
+        }
+
+        .about-content {
+            flex: 1.2;
+            text-align: left;
+        }
+
+        .about-content h2 {
+            font-size: 2.1rem;
+            margin-bottom: 20px;
+            color: var(--title-color);
+            text-align: left;
+        }
+
+        .about-content p {
+            font-size: 1.02rem;
             font-weight: 300;
             line-height: 1.7;
             margin-bottom: 18px;
             text-align: left;
         }
 
-        .step-image {
-            width: 100%;
-            max-height: 280px;
-            object-fit: contain;
-            background-color: #fcf8fd;
-            border-radius: 16px;
-            margin-bottom: 20px;
-            box-shadow: 0 8px 20px rgba(139, 121, 232, 0.15);
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        /* Mission Section */
+        .mission {
+            padding: 60px 0 0 0;
+            text-align: center;
+            background: radial-gradient(circle at 50% 20%, rgba(235, 215, 245, 0.5) 0%, #faf5fc 100%);
         }
 
-        .options-list {
+        .mission blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+            color: var(--title-color);
+            line-height: 1.5;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .mission-full-image {
+            width: 100%;
+            line-height: 0;
+        }
+
+        .mission-full-image img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Offerings Section */
+        .offerings {
+            background: radial-gradient(circle at 50% 50%, rgba(230, 210, 248, 0.4) 0%, #faf5fc 80%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .offerings h2 {
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: var(--title-color);
+            text-align: center;
+        }
+
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 20px;
+            text-align: left;
+            box-shadow: 0 12px 35px rgba(139, 121, 232, 0.08);
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 15px;
+            border: 1px solid rgba(235, 223, 240, 0.8);
+            transition: transform 0.3s ease;
         }
 
-        .option-card {
-            background: #faf5fc;
-            border: 2px solid var(--border-color);
-            padding: 15px 18px;
-            border-radius: 14px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.94rem;
-            color: var(--text-dark);
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: left;
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-text {
+            padding: 30px 25px;
+            flex: 1;
             display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .option-card:hover {
-            background: var(--purple-light);
-            border-color: var(--purple-accent);
-            transform: translateY(-2px);
-        }
-
-        .checklist-box {
-            background: var(--purple-light);
-            padding: 20px;
-            border-radius: 16px;
-            border: 1px dashed var(--purple-accent);
-            margin: 20px 0;
+            flex-direction: column;
+            justify-content: flex-start;
             text-align: left;
         }
 
-        .checklist-box h3 {
-            font-size: 1.15rem;
-            margin-bottom: 12px;
-            color: var(--title-color);
-            text-align: left;
-        }
-
-        .checklist-box ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .checklist-box li {
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        /* Estilo ajustado para a Apresentação da Paula (Sem cortar a cabeça) */
-        .paula-bio-box {
-            background: linear-gradient(135deg, #f9f5fc 0%, #f1ebfa 100%);
-            border: 2px solid var(--purple-accent);
-            border-radius: 20px;
-            padding: 25px 20px;
-            margin: 35px 0 25px 0;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(139, 121, 232, 0.15);
-        }
-
-        .paula-bio-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center top; /* Garante o foco no topo (rostos) */
-            border: 4px solid var(--white);
-            box-shadow: 0 6px 15px rgba(139, 121, 232, 0.25);
-            margin: 0 auto 15px auto;
-            display: block;
-        }
-
-        /* Estilo para vídeos de depoimento */
-        .step-video-box {
-            width: 240px;
-            margin: 0 auto 15px auto;
-            background: #2b2336;
-            border-radius: 30px;
-            padding: 12px;
-            box-shadow: 0 15px 30px rgba(139, 121, 232, 0.25);
-            border: 3px solid #9b89f5;
-        }
-
-        .step-video-screen {
-            width: 100%;
-            background: #000;
-            border-radius: 22px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .step-video-screen video {
-            width: 100%;
-            height: 360px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .testimonial-mini-card {
-            background: #faf5fc;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            border: 1px solid var(--border-color);
-            text-align: left;
-        }
-
-        .testimonial-mini-card p {
-            font-size: 0.88rem;
-            font-style: italic;
-            margin-bottom: 8px;
-        }
-
-        .testimonial-mini-card span {
-            font-size: 0.8rem;
+        .card-tag {
+            display: inline-block;
+            background-color: var(--purple-light);
             color: var(--purple-hover);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.72rem;
             font-weight: 600;
-            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            align-self: flex-start;
+            text-align: left;
         }
 
-        .faq-item {
-            background: #faf5fc;
-            padding: 15px;
-            border-radius: 12px;
+        .card h3 {
+            font-size: 1.25rem;
             margin-bottom: 12px;
+            color: var(--text-dark);
+            line-height: 1.3;
+            min-height: 3.2rem;
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: radial-gradient(circle at 50% 100%, rgba(225, 205, 245, 0.4) 0%, #faf5fc 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--title-color);
+            text-align: center;
+        }
+
+        .pricing > p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            padding: 0 10px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .price-box {
+            background: radial-gradient(circle at 50% 0%, rgba(245, 238, 252, 0.9) 0%, #ffffff 100%);
+            max-width: 540px;
+            margin: 40px auto 0 auto;
+            padding: 40px 35px;
+            border-radius: 24px;
+            box-shadow: 0 20px 45px rgba(139, 121, 232, 0.15);
+            border: 2px solid var(--purple-accent);
+            text-align: center;
+        }
+
+        .price-badge {
+            display: inline-block;
+            background: var(--purple-hover);
+            color: var(--white);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .price-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--title-color);
+            text-align: center;
+        }
+
+        .price-box .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 20px 0 10px 0;
+            text-align: center;
+        }
+
+        .price-box p {
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            font-weight: 300;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .guarantee-box {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            background-color: var(--purple-light);
+            padding: 10px 15px;
+            border-radius: 12px;
+            border: 1px dashed var(--purple-accent);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #faf5fc;
+            padding: 60px 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .faq-container h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: var(--title-color);
+            text-align: center;
+        }
+
+        .faq-card {
+            background-color: var(--white);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(139, 121, 232, 0.06);
             border: 1px solid var(--border-color);
             text-align: left;
         }
 
-        .faq-item strong {
-            display: block;
-            color: var(--title-color);
-            font-size: 0.95rem;
-            margin-bottom: 5px;
+        .faq-card h3 {
+            font-size: 1.2rem;
+            color: var(--purple-hover);
+            margin-bottom: 10px;
+            text-align: left;
         }
 
-        .faq-item p {
-            font-size: 0.88rem;
-            margin: 0;
-        }
-
-        .btn-continue {
-            background: linear-gradient(135deg, #9b89f5 0%, #7562dc 100%);
-            color: var(--white);
-            padding: 16px 30px;
-            border-radius: 35px;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(139, 121, 232, 0.4);
-            display: block;
-            text-align: center;
-            margin-top: 25px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
+        .faq-card p {
             font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin: 0;
+            text-align: left;
         }
 
-        .btn-continue:hover {
-            opacity: 0.95;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(139, 121, 232, 0.8);
+        /* Rodapé Estilizado */
+        .footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            text-align: center;
+            padding: 60px 20px;
         }
 
-        .btn-whatsapp {
-            background: var(--whatsapp-color);
-            color: var(--white);
-            padding: 14px 25px;
-            border-radius: 35px;
-            text-decoration: none;
-            font-weight: 600;
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 20px;
             letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+        }
+
+        .footer-disclaimer {
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            font-size: 0.8rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: #b5a7c7;
             text-align: center;
-            margin-top: 15px;
-            width: 100%;
-            font-size: 0.95rem;
         }
 
-        .btn-whatsapp:hover {
-            background: var(--whatsapp-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+        .footer-links {
+            margin-bottom: 25px;
+            font-size: 0.85rem;
+            text-align: center;
         }
 
-        .funnel-footer {
-            margin-top: 25px;
-            font-size: 0.78rem;
+        .footer-links a {
+            color: var(--footer-text);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .footer-copyright {
+            font-size: 0.8rem;
             color: #9c8fb0;
+            font-weight: 300;
             text-align: center;
+        }
+
+        /* Media Queries para Responsividade em Celulares */
+        @media (max-width: 768px) {
+            .hero-container, 
+            .welcome-container, 
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .hero-content, 
+            .welcome-content, 
+            .about-content {
+                text-align: center;
+            }
+
+            .hero-content h1,
+            .hero-content p,
+            .welcome-content p,
+            .about-content p,
+            .card-text,
+            .card h3,
+            .card p,
+            .faq-card,
+            .faq-card h3,
+            .faq-card p {
+                text-align: left;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+                line-height: 1.25;
+            }
+
+            .hero p, 
+            .welcome-content p, 
+            .about-content p {
+                font-size: 1rem;
+            }
+
+            .hero-image img {
+                width: 280px;
+                height: 320px;
+            }
+
+            .welcome-image img {
+                width: 100%;
+                max-width: 360px;
+            }
+
+            .about-photo-box img {
+                width: 220px;
+                height: 280px;
+            }
+
+            .mission blockquote {
+                font-size: 1.2rem;
+            }
+
+            .mission-full-image img {
+                height: 220px;
+            }
+
+            .offerings h2, 
+            .pricing h2, 
+            .testimonials-video-carousel h2, 
+            .welcome-content h2, 
+            .about-content h2,
+            .faq-container h2 {
+                font-size: 1.7rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 16px 20px;
+                font-size: 0.95rem;
+            }
+
+            .price-box {
+                padding: 30px 20px;
+            }
+
+            .price-box .price {
+                font-size: 2.2rem;
+            }
+
+            .carousel-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .phone-mockup.side,
+            .phone-mockup.center {
+                transform: scale(1);
+                width: 280px;
+                opacity: 1;
+            }
+
+            .footer-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .footer-links span {
+                display: none;
+            }
+
+            .footer-links a {
+                margin: 0 8px;
+            }
         }
     </style>
+    <script defer src="https://t.contentsquare.net/uxa/dea7adaba0220.js"></script>
 </head>
 <body>
 
-    <div class="funnel-container">
-        <div class="funnel-brand">Paula Maia &bull; Especialista em Sono Infantil</div>
+    <div class="announcement-bar">
+        ⚡ <strong>Acesso 100% Imediato:</strong> Comprou, assistiu e aplicou hoje mesmo!
+    </div>
+
+    <section class="hero">
+        <div class="hero-top-brand">
+            Paula Maia &nbsp;|&nbsp; Especialista em Sono Infantil
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">Método Durma + sem Choro! (Para bebês de 0 a 2 anos)</span>
+                <h1>Você não aguenta mais passar as madrugadas em claro, com o corpo pesado de exaustão e o bebê só dormindo no colo?</h1>
+                
+                <p>Se você já tentou de tudo, carrega o corpo pesado de cansaço, passa as madrugadas em claro embalando o bebê e sente que perdeu a paciência, saiba que a culpa não é sua. Descubra um caminho acolhedor e definitivo para toda a família voltar a descansar.</p>
+                <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn">Quero Minhas Noites de Sono de Volta por R$ 67</a>
+                <span class="hero-price-tip">⚡ Acesso imediato · À vista ou em até 12x no cartão</span>
+            </div>
+            <div class="hero-image">
+                <img src="hero-paula-bebe.jpg" alt="Paula Maia com o bebê no colo">
+            </div>
+        </div>
+    </section>
+
+    <section class="welcome">
+        <div class="welcome-container">
+            <div class="welcome-image">
+                <img src="berco-quarto.jpg" alt="Quartinho de bebê acolhedor com berço">
+            </div>
+            <div class="welcome-content">
+                <h2>Bem-vinda ao Minicurso Do Colo ao Berço</h2>
+                <p>Se você se sente exausta, com o corpo pesado e sem paciência porque o seu bebê só dorme no colo, acorda na mesma hora em que é colocado no berço ou só pega no sono mamando, você não está sozinha. Descubra estratégias práticas e respeitosas do método Durma + sem Choro! baseadas na neurociência do sono para o seu pequeno dormir no berço.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-video-carousel">
+        <div class="section-header-line"></div>
+        <h2>Conheça as mães que<br>já confiam no meu trabalho:</h2>
+        <p>Clique em qualquer vídeo para colocá-lo em destaque:</p>
         
-        <div class="progress-bar-container">
-            <div class="progress-bar-fill" id="funnelProgress"></div>
-        </div>
-
-        <!-- PASSO 1 -->
-        <div class="step-content active" id="step1">
-            <h1>Seu bebê só dorme no colo ou no peito e você já não aguenta mais de cansaço?</h1>
-            <img src="hero-paula-bebe.jpg" alt="Paula com bebê" class="step-image">
-            <p>Se você passa o dia inteiro exausta e já sabe que a próxima madrugada vai ser difícil, saiba que a culpa <strong>não é sua</strong>. Vamos fazer um diagnóstico rápido para descobrir como resolver isso de forma leve e carinhosa.</p>
-            <button class="btn-continue" onclick="goToStep(2, 50)">INICIAR DIAGNÓSTICO RÁPIDO &rarr;</button>
-        </div>
-
-        <!-- PASSO 2 -->
-        <div class="step-content" id="step2">
-            <h1>Qual é a idade do seu pequeno?</h1>
-            <p>Isso nos ajuda a entender a fase de desenvolvimento e o padrão de sono dele:</p>
-            <div class="options-list">
-                <div class="option-card" onclick="goToStep(3, 75)">👶 De 0 a 3 meses (Recém-nascido)</div>
-                <div class="option-card" onclick="goToStep(3, 75)">👶 De 4 a 8 meses (Fase de saltos e desenvolvimento)</div>
-                <div class="option-card" onclick="goToStep(3, 75)">🧒 De 9 a 12 meses (Apego e despertares)</div>
-                <div class="option-card" onclick="goToStep(3, 75)">🧒 De 1 a 2 anos (Birras e noites difíceis)</div>
-            </div>
-        </div>
-
-        <!-- PASSO 3 -->
-        <div class="step-content" id="step3">
-            <h1>Como o seu bebê costuma pegar no sono?</h1>
-            <p>(Esse é o detalhe que mais interfere nas madrugadas da família...)</p>
-            <div class="options-list">
-                <div class="option-card" onclick="goToStep(4, 100)">🛑 Apenas no colo ou balançando</div>
-                <div class="option-card" onclick="goToStep(4, 100)">🛑 Mamando no peito ou na mamadeira</div>
-                <div class="option-card" onclick="goToStep(4, 100)">⚠ No berço, mas acorda assim que sai do braço</div>
-                <div class="option-card" onclick="goToStep(4, 100)">✅ Adormece sozinho com facilidade</div>
-            </div>
-        </div>
-
-        <!-- PASSO 4: Página de Vendas Final -->
-        <div class="step-content" id="step4">
-            <div style="background: var(--purple-light); padding: 12px 15px; border-radius: 12px; border: 2px solid var(--purple-accent); margin-bottom: 20px; text-align: center;">
-                <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 700; color: var(--purple-hover); display: block; margin-bottom: 2px;">Diagnóstico Concluído</span>
-                <h2 style="font-size: 1.3rem; color: var(--title-color); margin: 0;">Do Colo ao Berço &bull; Método Durma + sem Choro!</h2>
+        <div class="carousel-container" id="videoCarousel" style="justify-content: center;">
+            <div class="phone-mockup side" onclick="highlightVideo(this)">
+                <div class="phone-screen">
+                    <video controls preload="metadata" poster="miniatura1.jpg">
+                        <source src="Depoimento1.mp4" type="video/mp4">
+                        O seu browser não suporta a reprodução de vídeos.
+                    </video>
+                    <div class="play-overlay"></div>
+                </div>
+                <div class="video-caption">
+                    <strong>Ana Paula</strong>
+                    <span>Mãe da Manu e Henrique</span>
+                </div>
             </div>
 
-            <h1>O Seu Diagnóstico: É Hora de Descansar</h1>
+            <div class="phone-mockup center" onclick="highlightVideo(this)">
+                <div class="phone-screen">
+                    <video controls preload="metadata" poster="miniatura2.jpg">
+                        <source src="Depoimento2.mp4" type="video/mp4">
+                        O seu browser não suporta a reprodução de vídeos.
+                    </video>
+                    <div class="play-overlay"></div>
+                </div>
+                <div class="video-caption">
+                    <strong>Depoimento Real</strong>
+                    <span>Mãe da Consultoria</span>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn">Quero Garantir Meu Acesso por R$ 67 Agora</a>
+        </div>
+
+        <!-- DEPOIMENTOS ESCRITOS REAIS (WHATSAPP) -->
+        <div style="max-width: 800px; margin: 50px auto 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; text-align: left;">
+            <div style="background: white; padding: 22px; border-radius: 16px; box-shadow: 0 8px 25px rgba(139, 121, 232, 0.1); border: 1px solid var(--border-color);">
+                <div style="font-size: 0.8rem; color: var(--purple-hover); font-weight: 700; margin-bottom: 8px;">💬 THEREZA MEDINA (Aluna)</div>
+                <p style="font-size: 0.92rem; font-weight: 400; color: var(--text-dark); margin: 0; line-height: 1.5;">
+                    "Oi Paula, olha a consultoria me ajudou muito! Eu estava bem perdida com horários e janelas de sono... Agora ela já fica mais calma, deitada na cadêrinha, no tapetinho. Nas noites estão começando a ser mais tranquilas!"
+                </p>
+            </div>
+            <div style="background: white; padding: 22px; border-radius: 16px; box-shadow: 0 8px 25px rgba(139, 121, 232, 0.1); border: 1px solid var(--border-color);">
+                <div style="font-size: 0.8rem; color: var(--purple-hover); font-weight: 700; margin-bottom: 8px;">💬 GABRIELA MAMÃE (Aluna)</div>
+                <p style="font-size: 0.92rem; font-weight: 400; color: var(--text-dark); margin: 0; line-height: 1.5;">
+                    "Boa noite Paula, tudo bem? Passando para agradecer pela consultoria, Sofia está dormindo bem melhor, dorme sozinha no berço e os despertares diminuíram muito... Antigamente havia vezes que ia 5 vezes por noite!"
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-container">
+            <div class="about-photo-box">
+                <img src="paula-familia.jpg" alt="Paula Maia com suas filhas">
+            </div>
+            <div class="about-content">
+                <h2>Prazer, eu sou a Paula Maia ❤️</h2>
+                <p>Sou especialista em sono infantil e dediquei minha trajetória a estudar o sono dos bebês e das crianças para ajudar famílias a terem noites mais tranquilas e uma rotina mais leve.</p>
+                <p>Além da experiência profissional, sou mãe de três filhos e sei que, na vida real, nem sempre existe rotina perfeita. Por isso, criei o método <strong>Durma + Sem Choro!</strong> baseado em estratégias práticas, acolhedoras e possíveis de aplicar no dia a dia.</p>
+                <p>Aqui, você vai aprender a entender o sono do seu bebê, identificar o que pode estar atrapalhando as noites e, passo a passo, ajudá-lo a dormir melhor e desenvolver mais autonomia para adormecer.</p>
+                <p>Sem culpa, sem fórmulas rígidas e sem precisar deixar de acolher o seu bebê.</p>
+                <p>Porque eu acredito que é possível buscar mais descanso sem abrir mão do colo, do carinho e do vínculo.</p>
+                <br>
+                <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn">Quero Transformar o Sono do Meu Bebê</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission">
+        <blockquote>"Nossa missão é fornecer estratégias acolhedoras através do método Durma + sem Choro! para que cada bebê alcance um sono tranquilo, permitindo que as famílias prosperem e desfrutem de noites revigorantes juntas."</blockquote>
+        <div class="mission-full-image">
+            <img src="missao-bebe.jpg" alt="Bebê recém-nascido dormindo pacificamente com manta rosa">
+        </div>
+    </section>
+
+    <section class="offerings">
+        <div class="section-header-line"></div>
+        <h2>O Que Você Vai Aprender nas Aulas Gravadas</h2>
+        <div class="offerings-grid">
+            <div class="card">
+                <div class="card-image">
+                    <img src="oferta-berco.jpg" alt="Ilustração em aquarela de berço e brinquedos">
+                </div>
+                <div class="card-text">
+                    <span class="card-tag">Aulas 1 e 2</span>
+                    <h3>Adeus, Berço Rejeitado & Rotina Leve</h3>
+                    <p>Entenda por que o bebê rejeita o berço e faça os ajustes práticos no ambiente e na rotina para prepará-lo com segurança e sem estresse.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="oferta-mae.jpg" alt="Ilustração em aquarela de mãe com bebê no colo">
+                </div>
+                <div class="card-text">
+                    <span class="card-tag">Aula 3</span>
+                    <h3>Transição Segura do Colo e Peito</h3>
+                    <p>Aprenda as estratégias práticas para diminuir a dependência exclusiva do colo e do peito/mamadeira na hora de adormecer.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="oferta-bebe.jpg" alt="Ilustração em aquarela de bebê dormindo">
+                </div>
+                <div class="card-text">
+                    <span class="card-tag">Aula 4</span>
+                    <h3>Consolidando o Sono Noturno</h3>
+                    <p>Aprenda a consolidar o berço de vez, mantendo a consistência e resolvendo os despertares noturnos no seu ritmo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="oferta">
+        <div class="section-header-line"></div>
+        <h2>Garanta Seu Acesso Agora</h2>
+        <p>Transforme as noites da sua casa com um método prático, direto ao ponto e desenvolvido especialmente para mães exaustas.</p>
+        
+        <div class="price-box">
+            <div class="price-badge">Minicurso Prático 100% Gravado</div>
+            <h3>Do Colo ao Berço (Acesso Imediato)</h3>
+            <p><strong>Aulas 100% Gravadas</strong> para você assistir, pausar e rever quantas vezes quiser, no horário em que precisar. Sem compromisso de agenda ou datas marcadas.</p>
+            <p><strong>🎁 Bônus Inclusos:</strong> Você também vai receber a <strong>Tabela Oficial de Janela de Sono</strong> e o guia de <strong>Quantidade de Sonecas por Idade</strong> para te guiar diariamente.</p>
+            <div class="price">R$ 67,00</div>
+            <p>ou em até 12x nas principais formas de pagamento.</p>
+            <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn" style="font-size: 0.92rem; padding: 16px 20px;">Quero Acesso Imediato Agora</a>
             
-            <p>Pelas suas respostas, o seu bebê precisa de ajuda para aprender a adormecer sem depender exclusivamente do colo ou do peito. Quando ajustamos isso com carinho, as noites voltam a ter paz. <strong>Você merece descansar.</strong></p>
-            
-            <div class="checklist-box">
-                <h3>📚 O QUE VOCÊ VAI RECEBER NO MINICURSO:</h3>
-                <ul>
-                    <li>✔ <strong>Aulas 01 e 02:</strong> Entendendo o sono do bebê + Preparando o ambiente e a rotina ideal.</li>
-                    <li>✔️ <strong>Aulas 03 e 04:</strong> O Método Durma + sem choro passo a passo (removendo o colo/peito com carinho).</li>
-                    <li>✔ <strong>Aulas 05 e 06:</strong> Consolidando hábitos, lidando com retrocessos e colocando no berço com segurança.</li>
-                    <li>🎁 <strong>BÔNUS 1:</strong> Tabela Oficial de Janela de Sono por idade.</li>
-                    <li>🎁 <strong>BÔNUS 2:</strong> Guia prático de Quantidade de Sonecas.</li>
-                    <li>💬 <strong>BÔNUS 3: Acesso ao Grupo de Apoio no WhatsApp</strong> com suporte especializado!</li>
-                    <li>⚡ <strong>Acesso Vitalício</strong> à plataforma.</li>
-                </ul>
+            <div class="guarantee-box">
+                🔒 <strong>Garantia Incondicional de 7 Dias:</strong> Teste o método sem compromisso. Se não vir diferença, seu dinheiro de volta.
             </div>
+        </div>
+    </section>
 
-            <div style="background: var(--purple-light); padding: 18px; border-radius: 14px; border: 1px dashed var(--purple-accent); margin: 20px 0; text-align: center;">
-                <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--purple-hover);">Condição Especial de Lançamento</span>
-                <h2 style="font-size: 2.2rem; color: var(--text-dark); margin: 8px 0;">R$ 67,00</h2>
-                <p style="font-size: 0.85rem; margin: 0; text-align: center;">À vista ou em até 12x no cartão de crédito</p>
-            </div>
+    <section class="faq-section">
+        <div class="section-header-line"></div>
+        <div class="faq-container">
+            <h2>Dúvidas Frequentes</h2>
 
-            <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn-continue" style="background: linear-gradient(135deg, #7562dc 0%, #513fc4 100%); margin-bottom: 10px;">QUERO MINHAS NOITES DE SONO DE VOLTA AGORA</a>
-
-            <!-- Botão de WhatsApp -->
-            <a href="https://wa.me/5532991396972?text=Olá%20Paula,%20estou%20no%20site%20e%20tenho%20alguma%20dúvida%20sobre%20o%20curso%20Do%20Colo%20ao%20Berço." target="_blank" class="btn-whatsapp">
-                💬 Ficou com dúvida? Fale comigo no WhatsApp
-            </a>
-
-            <!-- APRESENTAÇÃO DA PAULA (Com imagem corrigida para não cortar) -->
-            <div class="paula-bio-box">
-                <img src="paula-familia.jpg" alt="Paula Maia" class="paula-bio-img">
-                <h3 style="font-size: 1.25rem; color: var(--title-color); margin-bottom: 8px;">Quem vai te guiar: Paula Maia</h3>
-                <p style="font-size: 0.9rem; text-align: center; margin-bottom: 12px; font-weight: 500; color: var(--purple-hover);">Especialista em Sono Infantil &bull; Mãe de 3</p>
-                <p style="font-size: 0.9rem; text-align: center; line-height: 1.6; margin: 0;">
-                    "Eu já vivi na pele o desespero de passar noites em claro, com o corpo exausto e sem saber o que fazer para o meu bebé dormir. Foi por isso que me especializei e criei o método <strong>Durma + Sem Choro!</strong>. Quero pegar na sua mão para te mostrar que é possível ter noites tranquilas, respeitando o vínculo com o seu filho e sem precisar deixá-lo a chorar sozinho."
+            <div class="faq-card">
+                <h3>Como e quando recebo o acesso ao curso?</h3>
+                <p>
+                    O acesso é <strong>100% imediato</strong>! Assim que o seu pagamento for aprovado (via PIX ou cartão de crédito), você receberá automaticamente um e-mail da Kiwify com o seu login e senha para entrar na plataforma e começar a assistir às aulas na mesma hora.
                 </p>
             </div>
 
-            <!-- PROVA SOCIAL: VÍDEOS E DEPOIMENTOS ESCRITOS -->
-            <h3 style="font-size: 1.15rem; margin: 35px 0 15px 0; color: var(--title-color);">Histórias Reais de Mães que Conquistaram o Sono:</h3>
-
-            <div class="step-video-box">
-                <div class="step-video-screen">
-                    <video controls preload="metadata" poster="miniatura1.jpg">
-                        <source src="Depoimento1.mp4" type="video/mp4">
-                        O seu navegador não suporta vídeo.
-                    </video>
-                </div>
-            </div>
-            <p style="text-align: center; font-size: 0.85rem; color: var(--purple-hover); margin-bottom: 20px;">Ana Paula — Mãe da Manu e do Henrique</p>
-
-            <div class="step-video-box">
-                <div class="step-video-screen">
-                    <video controls preload="metadata" poster="miniatura2.jpg">
-                        <source src="Depoimento2.mp4" type="video/mp4">
-                        O seu navegador não suporta vídeo.
-                    </video>
-                </div>
-            </div>
-            <p style="text-align: center; font-size: 0.85rem; color: var(--purple-hover); margin-bottom: 25px;">Depoimento real de mãe aluna do método.</p>
-
-            <div class="testimonial-mini-card">
-                <p>"Passar as madrugadas em claro embalando já era rotina aqui em casa. As aulas são super diretas e práticas, sem enrolação para quem já está exausta."</p>
-                <span>— Camila Silveira (Mãe da Sofia, 1 ano e 2 meses)</span>
+            <div class="faq-card">
+                <h3>O curso serve para qual idade de bebê?</h3>
+                <p>
+                    O método "Do Colo ao Berço" foi desenhado especialmente para ajudar mães que enfrentam dificuldades com o sono de bebês <strong>de até dois anos</strong>, trazendo técnicas práticas e humanizadas para restaurar noites de sono reais.
+                </p>
             </div>
 
-            <div class="testimonial-mini-card">
-                <p>"O melhor investimento que fiz por mim e pela minha família. Voltei a dormir e me sinto muito mais paciente durante o dia com o meu pequeno."</p>
-                <span>— Juliana Ribeiro (Mãe do Pedro, 6 meses)</span>
+            <div class="faq-card">
+                <h3>Por quanto tempo terei acesso às aulas?</h3>
+                <p>
+                    O acesso é vitalício! Você poderá assistir no seu próprio ritmo, rever as aulas sempre que houver uma nova fase ou regressão de sono do seu bebê.
+                </p>
             </div>
 
-            <!-- GARANTIA -->
-            <div style="background: #faf5fc; padding: 16px; border-radius: 14px; border: 1px solid var(--border-color); margin: 25px 0; text-align: center;">
-                <h3 style="font-size: 1rem; color: var(--title-color); margin-bottom: 6px;">🔒 Garantia Incondicional de 7 Dias</h3>
-                <p style="font-size: 0.85rem; margin: 0; text-align: center;">Teste o método sem compromisso. Se não ver diferença na rotina da sua casa, devolvemos 100% do seu dinheiro.</p>
+            <div class="faq-card">
+                <h3>O método utiliza técnicas que deixam o bebê chorando sozinho?</h3>
+                <p>
+                    De forma alguma! O método <strong>Durma + sem Choro!</strong> é totalmente acolhedor e baseado na neurociência do sono. Respeitamos o vínculo entre mãe e bebé, sem necessidade de deixar a criança chorando sozinha no berço.
+                </p>
             </div>
 
-            <!-- FAQ COMPLETO -->
-            <h3 style="font-size: 1.15rem; margin: 25px 0 15px 0; color: var(--title-color);">Dúvidas Frequentes</h3>
-
-            <div class="faq-item">
-                <strong>O curso serve para qual idade?</strong>
-                <p>Ideal para bebês de 0 a 2 anos que enfrentam dificuldades com o sono e despertares frequentes.</p>
+            <div class="faq-card">
+                <h3>Preciso de muito tempo livre para acompanhar o minicurso?</h3>
+                <p>
+                    Não! As aulas são gravadas em formato direto ao ponto e objetivo, pensadas justamente para rotinas de mães exaustas. Pode assistir aos poucos, nos momentos em que o bebê estiver a dormir ou a descansar.
+                </p>
             </div>
 
-            <div class="faq-item">
-                <strong>O método deixa o bebê chorando sozinho?</strong>
-                <p>De forma alguma! É um método acolhedor baseado na neurociência, respeitando o vínculo entre mãe e bebê.</p>
+            <div class="faq-card">
+                <h3>O minicurso funciona para bebés que acordam a toda a hora à noite?</h3>
+                <p>
+                    Sim. O curso aborda diretamente as causas dos despertares noturnos frequentes, ajudando a ensinar o bebé a adormecer com autonomia e a reduzir drasticamente as interrupções durante a noite.
+                </p>
             </div>
 
-            <div class="faq-item">
-                <strong>Como recebo o acesso ao curso?</strong>
-                <p>Assim que o pagamento é aprovado, você recebe um e-mail automático da Kiwify com seus dados de acesso imediato.</p>
+            <div class="faq-card">
+                <h3>Como funciona a garantia de 7 dias?</h3>
+                <p>
+                    Se por qualquer motivo achar que o método não se aplica à sua realidade ou não vir resultados na rotina da sua casa, basta solicitar o reembolso dentro de 7 dias através da plataforma que o valor é devolvido integralmente, sem burocracia.
+                </p>
             </div>
-
-            <div class="faq-item">
-                <strong>Por quanto tempo terei acesso às aulas?</strong>
-                <p>O acesso é vitalício! Você pode assistir e rever os módulos sempre que precisar, acompanhando o crescimento do seu bebê.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>O meu bebê mama no peito para dormir, o método funciona para nós?</strong>
-                <p>Sim! Mostramos exatamente como desassociar o peito do sono de forma gradual e amorosa, sem cortar a amamentação.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>Não tenho muito tempo livre. As aulas são muito longas?</strong>
-                <p>De jeito nenhum. As aulas são diretas, curtas e práticas, criadas especialmente para mães que estão exaustas e sem tempo a perder.</p>
-            </div>
-
-            <div class="faq-item">
-                <strong>Como funciona o suporte com a Paula?</strong>
-                <p>Além das aulas gravadas, você terá acesso direto ao nosso grupo de apoio no WhatsApp para tirar dúvidas e caminhar acompanhada.</p>
-            </div>
-
-            <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn-continue" style="background: linear-gradient(135deg, #7562dc 0%, #513fc4 100%); margin-top: 25px;">QUERO GARANTIR MEU ACESSO COM DESCONTO</a>
         </div>
+    </section>
 
-        <div class="funnel-footer">
-            &copy; 2026 Paula Maia &bull; Método Durma + sem Choro!
+    <footer class="footer">
+        <div class="footer-brand">
+            Curso Do Colo ao Berço com Paula Maia &bull; Consultoria Infantil
         </div>
-    </div>
+        <div class="footer-disclaimer">
+            Este conteúdo é independente e não possui vínculo institucional com plataformas de redes sociais. Os depoimentos apresentados refletem experiências individuais reais, sendo os resultados variáveis de acordo com a rotina e o contexto de cada família.
+        </div>
+        <div class="footer-links">
+            <a href="mailto:paula_mc19@yahoo.com.br">Política de Privacidade</a>
+            <span>&middot;</span>
+            <a href="mailto:paula_mc19@yahoo.com.br">Termos de Uso</a>
+            <span>&middot;</span>
+            <a href="mailto:paula_mc19@yahoo.com.br">Contato</a>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2026 Paula Maia. Todos os direitos reservados.
+        </div>
+    </footer>
 
     <script>
-        function goToStep(stepNum, progressPercentage) {
-            document.querySelectorAll('video').forEach(video => {
-                video.pause();
-                video.currentTime = 0;
-            });
+        function highlightVideo(selectedElement) {
+            const carousel = document.getElementById('videoCarousel');
+            
+            if (selectedElement.classList.contains('center')) return;
 
-            document.querySelectorAll('.step-content').forEach(el => el.classList.remove('active'));
-            document.getElementById('step' + stepNum).classList.add('active');
-            document.getElementById('funnelProgress').style.width = progressPercentage + '%';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            const currentCenter = carousel.querySelector('.phone-mockup.center');
 
-            if (typeof fbq === 'function') {
-                fbq('trackCustom', 'Passo_' + stepNum);
-                if (stepNum === 4) {
-                    fbq('track', 'Lead');
-                }
+            currentCenter.classList.remove('center');
+            currentCenter.classList.add('side');
+
+            selectedElement.classList.remove('side');
+            selectedElement.classList.add('center');
+
+            const items = Array.from(carousel.children);
+            const clickedIndex = items.indexOf(selectedElement);
+            const centerIndex = items.indexOf(currentCenter);
+
+            if (clickedIndex === 0) {
+                carousel.insertBefore(selectedElement, currentCenter);
+            } else if (clickedIndex === 2) {
+                carousel.insertBefore(currentCenter, selectedElement);
             }
         }
     </script>
