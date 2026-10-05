@@ -269,7 +269,8 @@
             border-radius: 38px;
             padding: 14px;
             position: relative;
-            transition: all 0.4s ease;
+            box-shadow: 0 20px 40px rgba(139, 121, 232, 0.25);
+            border: 3px solid #7562dc;
             cursor: pointer;
             text-align: left;
         }
@@ -285,26 +286,6 @@
             background: #1a1421;
             border-radius: 10px;
             z-index: 10;
-        }
-
-        .phone-mockup.side {
-            box-shadow: 0 15px 30px rgba(139, 121, 232, 0.15);
-            border: 3px solid #7562dc;
-            opacity: 0.75;
-            transform: scale(0.92);
-        }
-
-        .phone-mockup.side:hover {
-            opacity: 0.95;
-            transform: scale(0.95);
-        }
-
-        .phone-mockup.center {
-            box-shadow: 0 25px 50px rgba(139, 121, 232, 0.35);
-            border: 4px solid #9b89f5;
-            z-index: 2;
-            transform: scale(1.05);
-            opacity: 1;
         }
 
         .phone-screen {
@@ -826,11 +807,8 @@
                 gap: 20px;
             }
 
-            .phone-mockup.side,
-            .phone-mockup.center {
-                transform: scale(1);
+            .phone-mockup {
                 width: 280px;
-                opacity: 1;
             }
 
             .footer-links {
@@ -849,6 +827,23 @@
             }
         }
     </style>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1742793370309567');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1742793370309567&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
     <script defer src="https://t.contentsquare.net/uxa/dea7adaba0220.js"></script>
 </head>
 <body>
@@ -894,7 +889,7 @@
         <p>Clique em qualquer vídeo para colocá-lo em destaque:</p>
         
         <div class="carousel-container" id="videoCarousel" style="justify-content: center;">
-            <div class="phone-mockup side" onclick="highlightVideo(this)">
+            <div class="phone-mockup" onclick="highlightVideo(this)">
                 <div class="phone-screen">
                     <video controls preload="metadata" poster="miniatura1.jpg">
                         <source src="Depoimento1.mp4" type="video/mp4">
@@ -908,7 +903,7 @@
                 </div>
             </div>
 
-            <div class="phone-mockup center" onclick="highlightVideo(this)">
+            <div class="phone-mockup" onclick="highlightVideo(this)">
                 <div class="phone-screen">
                     <video controls preload="metadata" poster="miniatura2.jpg">
                         <source src="Depoimento2.mp4" type="video/mp4">
@@ -1104,25 +1099,9 @@
     <script>
         function highlightVideo(selectedElement) {
             const carousel = document.getElementById('videoCarousel');
-            
-            if (selectedElement.classList.contains('center')) return;
-
-            const currentCenter = carousel.querySelector('.phone-mockup.center');
-
-            currentCenter.classList.remove('center');
-            currentCenter.classList.add('side');
-
-            selectedElement.classList.remove('side');
-            selectedElement.classList.add('center');
-
             const items = Array.from(carousel.children);
-            const clickedIndex = items.indexOf(selectedElement);
-            const centerIndex = items.indexOf(currentCenter);
-
-            if (clickedIndex === 0) {
-                carousel.insertBefore(selectedElement, currentCenter);
-            } else if (clickedIndex === 2) {
-                carousel.insertBefore(currentCenter, selectedElement);
+            if (items[0] === selectedElement) {
+                carousel.appendChild(items[0]);
             }
         }
     </script>
