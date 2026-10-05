@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paula Maia | Especialista Sono Infantil</title>
+    <title>Paula Maia | Especialista Sono Infantil - Do Colo ao Berço</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -39,7 +39,10 @@
             font-weight: 700;
         }
 
-        /* Traço horizontal padrão */
+        .num {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
         .section-header-line {
             width: 60px;
             height: 4px;
@@ -48,7 +51,6 @@
             border-radius: 2px;
         }
 
-        /* Top Announcement Bar - Fixa no Topo */
         .announcement-bar {
             position: fixed;
             top: 0;
@@ -65,7 +67,6 @@
             box-shadow: 0 2px 10px rgba(139, 121, 232, 0.2);
         }
 
-        /* Hero Section */
         .hero {
             max-width: 1100px;
             margin: 0 auto;
@@ -135,9 +136,9 @@
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 300;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             line-height: 1.6;
             text-align: left;
         }
@@ -178,8 +179,7 @@
             text-align: left;
         }
 
-        /* Welcome Section */
-        .welcome {
+        .pain-section {
             background: radial-gradient(circle at 80% 50%, rgba(225, 205, 245, 0.4) 0%, transparent 60%),
                         radial-gradient(circle at 20% 80%, rgba(245, 225, 235, 0.4) 0%, transparent 60%),
                         #faf5fc;
@@ -187,50 +187,64 @@
             text-align: left;
         }
 
-        .welcome-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1100px;
+        .pain-container {
+            max-width: 800px;
             margin: 0 auto;
-            gap: 50px;
             text-align: left;
         }
 
-        .welcome-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .welcome-image img {
-            max-width: 100%;
-            width: 450px;
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(139, 121, 232, 0.12);
-        }
-
-        .welcome-content {
-            flex: 1;
+        .pain-container h2 {
+            font-size: 2rem;
+            color: var(--title-color);
+            margin-bottom: 25px;
+            line-height: 1.3;
             text-align: left;
         }
 
-        .welcome-content h2 {
-            font-size: 2.1rem;
+        .pain-container p {
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.7;
             margin-bottom: 20px;
-            line-height: 1.2;
+            text-align: left;
+        }
+
+        .cycle-box {
+            background: var(--white);
+            border-left: 4px solid var(--purple-hover);
+            padding: 20px 25px;
+            border-radius: 0 16px 16px 0;
+            margin: 25px 0;
+            box-shadow: 0 5px 20px rgba(139, 121, 232, 0.08);
+            font-weight: 500;
             color: var(--title-color);
             text-align: left;
         }
 
-        .welcome-content p {
-            font-size: 1.05rem;
-            font-weight: 300;
-            line-height: 1.7;
+        .benefits-list {
+            list-style: none;
+            margin: 30px 0;
             text-align: left;
         }
 
-        /* Secção de Depoimentos */
+        .benefits-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            font-weight: 400;
+            text-align: left;
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--purple-hover);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
         .testimonials-video-carousel {
             padding: 90px 20px;
             text-align: center;
@@ -335,11 +349,6 @@
             margin-left: 4px;
         }
 
-        .phone-screen video:playing ~ .play-overlay {
-            opacity: 0;
-            visibility: hidden;
-        }
-
         .video-caption {
             margin-top: 14px;
             text-align: center;
@@ -361,7 +370,6 @@
             display: inline-block;
         }
 
-        /* Conheça a Especialista */
         .about {
             padding: 80px 20px;
             background: radial-gradient(circle at 10% 50%, rgba(225, 205, 245, 0.5) 0%, transparent 50%),
@@ -414,7 +422,6 @@
             text-align: left;
         }
 
-        /* Mission Section */
         .mission {
             padding: 60px 0 0 0;
             text-align: center;
@@ -446,7 +453,6 @@
             display: block;
         }
 
-        /* Offerings Section */
         .offerings {
             background: radial-gradient(circle at 50% 50%, rgba(230, 210, 248, 0.4) 0%, #faf5fc 80%);
             padding: 80px 20px;
@@ -455,50 +461,9 @@
 
         .offerings h2 {
             font-size: 2.2rem;
-            margin-bottom: 50px;
+            margin-bottom: 15px;
             color: var(--title-color);
             text-align: center;
-        }
-
-        .offerings-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
-            margin: 0 auto;
-            align-items: stretch;
-        }
-
-        .card {
-            background-color: var(--white);
-            border-radius: 20px;
-            text-align: left;
-            box-shadow: 0 12px 35px rgba(139, 121, 232, 0.08);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid rgba(235, 223, 240, 0.8);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-image img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .card-text {
-            padding: 30px 25px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            text-align: left;
         }
 
         .card-tag {
@@ -511,30 +476,11 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             align-self: flex-start;
             text-align: left;
         }
 
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-            color: var(--text-dark);
-            line-height: 1.3;
-            min-height: 3.2rem;
-            display: flex;
-            align-items: center;
-            text-align: left;
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            font-weight: 300;
-            line-height: 1.6;
-            text-align: left;
-        }
-
-        /* Pricing Section */
         .pricing {
             background: radial-gradient(circle at 50% 100%, rgba(225, 205, 245, 0.4) 0%, #faf5fc 100%);
             padding: 80px 20px;
@@ -617,7 +563,6 @@
             text-align: center;
         }
 
-        /* FAQ Section */
         .faq-section {
             background-color: #faf5fc;
             padding: 60px 20px;
@@ -664,7 +609,6 @@
             text-align: left;
         }
 
-        /* Rodapé Estilizado */
         .footer {
             background-color: var(--footer-bg);
             color: var(--footer-text);
@@ -716,7 +660,6 @@
             text-align: center;
         }
 
-        /* Media Queries para Responsividade em Celulares */
         @media (max-width: 768px) {
             .hero-container, 
             .welcome-container, 
@@ -728,20 +671,8 @@
 
             .hero-content, 
             .welcome-content, 
-            .about-content {
-                text-align: center;
-            }
-
-            .hero-content h1,
-            .hero-content p,
-            .welcome-content p,
-            .about-content p,
-            .card-text,
-            .card h3,
-            .card p,
-            .faq-card,
-            .faq-card h3,
-            .faq-card p {
+            .about-content,
+            .pain-container {
                 text-align: left;
             }
 
@@ -826,6 +757,9 @@
                 margin: 0 8px;
             }
         }
+        .hero-content, .pain-container, .about-content, .faq-container {
+            text-align: left !important;
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -852,42 +786,69 @@
         ⚡ <strong>Acesso 100% Imediato:</strong> Comprou, assistiu e aplicou hoje mesmo!
     </div>
 
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-top-brand">
             Paula Maia &nbsp;|&nbsp; Especialista em Sono Infantil
         </div>
         <div class="hero-container">
             <div class="hero-content">
-                <span class="hero-badge">Método Durma + sem Choro! (Para bebês de 0 a 2 anos)</span>
-                <h1>Você não aguenta mais passar as madrugadas em claro, com o corpo pesado de exaustão e o bebê só dormindo no colo?</h1>
+                <span class="hero-badge">DO COLO AO BERÇO</span>
+                <h1>Seu bebê só dorme no colo ou mamando e acorda assim que você tenta colocá-lo no berço?</h1>
+                <p>Você passa minutos embalando, ninando ou amamentando até seu bebê finalmente dormir. Aí você o coloca no berço... e ele acorda na mesma hora. Colo, peito, berço, choro e tudo recomeça. No fim da noite, você está exausta e sem saber o que fazer.</p>
                 
-                <p>Se você já tentou de tudo, carrega o corpo pesado de cansaço, passa as madrugadas em claro embalando o bebê e sente que perdeu a paciência, saiba que a culpa não é sua. Descubra um caminho acolhedor e definitivo para toda a família voltar a descansar.</p>
-                <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn">Quero Minhas Noites de Sono de Volta por R$ 67</a>
-                <span class="hero-price-tip">⚡ Acesso imediato · À vista ou em até 12x no cartão</span>
+                <p><strong>Você não precisa escolher entre acolher seu bebê e conseguir descansar.</strong><br>
+                Conheça o <strong>Do Colo ao Berço</strong>: um curso prático e acolhedor para bebês de <span class="num">0</span> a <span class="num">2</span> anos que ensina o passo a passo da transição sem choro e sem deixar seu bebê sozinho.</p>
+
+                <div style="margin: 25px 0 10px 0;">
+                    <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn">QUERO ENSINAR MEU BEBÊ A DORMIR NO BERÇO</a>
+                </div>
+                <span class="hero-price-tip">🔒 Compra segura &nbsp;&bull;&nbsp; ⚡ Acesso imediato &nbsp;&bull;&nbsp; 💳 À vista ou em até <span class="num">12</span>x no cartão</span>
             </div>
             <div class="hero-image">
-                <img src="hero-paula-bebe.jpg" alt="Paula Maia com o bebê no colo">
+                <img src="bebe_no_berço.jpg" alt="Bebê dormindo pacificamente no berço">
             </div>
         </div>
     </section>
 
-    <section class="welcome">
-        <div class="welcome-container">
-            <div class="welcome-image">
-                <img src="berco-quarto.jpg" alt="Quartinho de bebê acolhedor com berço">
+    <!-- PAIN & EMPATHY SECTION -->
+    <section class="pain-section">
+        <div class="pain-container">
+            <div class="section-header-line"></div>
+            <h2>Talvez você esteja vivendo exatamente isso...</h2>
+            <p>Seu bebê só pega no sono no colo ou mamando. Você espera ele adormecer profundamente, mas assim que o encosta no colchão, ele desperta e o ciclo recomeça a noite inteira. Você se sente presa a uma única forma de fazê-lo dormir e acorda exausta todas as manhãs.</p>
+            
+            <div class="cycle-box">
+                “Será que meu bebê nunca vai conseguir dormir no berço?”<br>
+                <span style="font-weight: 300; font-size: 0.95rem; display: block; margin-top: 8px;">
+                    Se você se identificou, saiba que a culpa não é sua. Seu bebê não precisa chorar sozinho para aprender a adormecer; o que falta é um caminho gradual, seguro e respeitoso.
+                </span>
             </div>
-            <div class="welcome-content">
-                <h2>Bem-vinda ao Minicurso Do Colo ao Berço</h2>
-                <p>Se você se sente exausta, com o corpo pesado e sem paciência porque o seu bebê só dorme no colo, acorda na mesma hora em que é colocado no berço ou só pega no sono mamando, você não está sozinha. Descubra estratégias práticas e respeitosas do método Durma + sem Choro! baseadas na neurociência do sono para o seu pequeno dormir no berço.</p>
-            </div>
+
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--title-color); margin: 30px 0 15px 0;">Imagine poder:</h3>
+            <ul class="benefits-list">
+                <li>Colocar seu bebê no berço com tranquilidade</li>
+                <li>Reduzir a dependência exclusiva do colo e do peito</li>
+                <li>Entender os sinais reais de sono e organizar a rotina</li>
+                <li>Saber exatamente como agir nos despertares</li>
+                <li>Voltar a ter noites de descanso e paz</li>
+            </ul>
+            <p style="font-weight: 600; color: var(--purple-hover); margin-top: 20px;">
+                Sem abandonar o colo. Sem ignorar o choro. Sem deixar seu bebê sozinho.
+            </p>
         </div>
     </section>
 
+    <!-- INTRO CURSO & VIDEOS DE DEPOIMENTO -->
     <section class="testimonials-video-carousel">
         <div class="section-header-line"></div>
-        <h2>Conheça as mães que<br>já confiam no meu trabalho:</h2>
-        <p>Clique em qualquer vídeo para colocá-lo em destaque:</p>
-        
+        <h2>Conheça o Do Colo ao Berço</h2>
+        <p style="max-width: 750px; margin: 0 auto 30px auto; font-size: 1.05rem; font-weight: 300;">
+            Um curso prático criado para mães que querem melhorar o sono do bebê sem métodos rígidos ou choro solitário. Você vai aprender estratégias simples para aplicar na vida real, mesmo com a rotina corrida.
+        </p>
+
+        <p style="margin-bottom: 25px;">Veja o que algumas mães que já fizeram o acompanhamento com a Paula disseram:</p>
+
         <div class="carousel-container" id="videoCarousel" style="justify-content: center;">
             <div class="phone-mockup" onclick="highlightVideo(this)">
                 <div class="phone-screen">
@@ -917,28 +878,89 @@
                 </div>
             </div>
         </div>
-        
-        <div style="margin-top: 30px;">
-            <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn">Quero Garantir Meu Acesso por R$ 67 Agora</a>
-        </div>
 
-        <!-- DEPOIMENTOS ESCRITOS REAIS (WHATSAPP) -->
-        <div style="max-width: 800px; margin: 50px auto 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; text-align: left;">
+        <!-- DEPOIMENTOS ESCRITOS REAIS -->
+        <div style="max-width: 800px; margin: 40px auto 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; text-align: left;">
             <div style="background: white; padding: 22px; border-radius: 16px; box-shadow: 0 8px 25px rgba(139, 121, 232, 0.1); border: 1px solid var(--border-color);">
-                <div style="font-size: 0.8rem; color: var(--purple-hover); font-weight: 700; margin-bottom: 8px;">💬 THEREZA MEDINA (Aluna)</div>
+                <div style="font-size: 0.8rem; color: var(--purple-hover); font-weight: 700; margin-bottom: 8px;">“Agora ela já fica mais calma...”</div>
                 <p style="font-size: 0.92rem; font-weight: 400; color: var(--text-dark); margin: 0; line-height: 1.5;">
-                    "Oi Paula, olha a consultoria me ajudou muito! Eu estava bem perdida com horários e janelas de sono... Agora ela já fica mais calma, deitada na cadêrinha, no tapetinho. Nas noites estão começando a ser mais tranquilas!"
+                    "Oi Paula, olha a consultoria me ajudou muito! Eu estava bem perdida com horários e janelas de sono... Agora ela já fica mais calma, deitada na cadeirinha, no tapetinho. Nas noites estão começando a ser mais tranquilas!"<br>
+                    <strong style="display: block; margin-top: 8px; font-size: 0.85rem; color: var(--title-color);">— Thereza Medina, aluna</strong>
                 </p>
             </div>
             <div style="background: white; padding: 22px; border-radius: 16px; box-shadow: 0 8px 25px rgba(139, 121, 232, 0.1); border: 1px solid var(--border-color);">
-                <div style="font-size: 0.8rem; color: var(--purple-hover); font-weight: 700; margin-bottom: 8px;">💬 GABRIELA MAMÃE (Aluna)</div>
+                <div style="font-size: 0.8rem; color: var(--purple-hover); font-weight: 700; margin-bottom: 8px;">“Ela dorme sozinha no berço...”</div>
                 <p style="font-size: 0.92rem; font-weight: 400; color: var(--text-dark); margin: 0; line-height: 1.5;">
-                    "Boa noite Paula, tudo bem? Passando para agradecer pela consultoria, Sofia está dormindo bem melhor, dorme sozinha no berço e os despertares diminuíram muito... Antigamente havia vezes que ia 5 vezes por noite!"
+                    "Passando para agradecer pela consultoria, Sofia está dormindo bem melhor, dorme sozinha no berço e os despertares diminuíram muito... Antigamente havia vezes que ia <span class="num">5</span> vezes por noite!"<br>
+                    <strong style="display: block; margin-top: 8px; font-size: 0.85rem; color: var(--title-color);">— Gabriela, mãe da Sofia</strong>
                 </p>
             </div>
         </div>
     </section>
 
+    <!-- 6 AULAS PRÁTICAS (CURRICULUM EM LISTA) -->
+    <section class="offerings">
+        <div class="section-header-line"></div>
+        <h2>O que você vai aprender</h2>
+        <p style="max-width: 700px; margin: 0 auto 40px auto; font-weight: 300;"><span class="num">6</span> aulas práticas para sair do “só dorme no colo” rumo a uma nova rotina de sono</p>
+        
+        <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; text-align: left;">
+            <div style="background: white; padding: 25px 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(139, 121, 232, 0.08); border: 1px solid var(--border-color);">
+                <span class="card-tag">Aula <span class="num">01</span></span>
+                <h3 style="font-size: 1.2rem; color: var(--title-color); margin: 8px 0 8px 0; font-family: 'Playfair Display', serif;">Entendendo o sono do bebê</h3>
+                <p style="font-size: 0.98rem; font-weight: 300; line-height: 1.6; margin: 0;">Antes de mudar qualquer coisa, você precisa entender o que está acontecendo. Você vai conhecer os principais aspectos do sono do bebê e entender por que alguns hábitos podem dificultar o momento de adormecer e a permanência no berço.</p>
+            </div>
+
+            <div style="background: white; padding: 25px 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(139, 121, 232, 0.08); border: 1px solid var(--border-color);">
+                <span class="card-tag">Aula <span class="num">02</span></span>
+                <h3 style="font-size: 1.2rem; color: var(--title-color); margin: 8px 0 8px 0; font-family: 'Playfair Display', serif;">Rotina e ambiente favoráveis ao sono</h3>
+                <p style="font-size: 0.98rem; font-weight: 300; line-height: 1.6; margin: 0;">Aprenda a observar os sinais de sono e organizar uma rotina mais adequada à realidade do seu bebê. Você também vai entender como preparar o ambiente para favorecer um momento de descanso mais tranquilo.</p>
+            </div>
+
+            <div style="background: white; padding: 25px 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(139, 121, 232, 0.08); border: 1px solid var(--border-color);">
+                <span class="card-tag">Aula <span class="num">03</span></span>
+                <h3 style="font-size: 1.2rem; color: var(--title-color); margin: 8px 0 8px 0; font-family: 'Playfair Display', serif;">Preparando a transição do colo para o berço</h3>
+                <p style="font-size: 0.98rem; font-weight: 300; line-height: 1.6; margin: 0;">Aqui começa a mudança. Você vai aprender como preparar seu bebê para essa nova forma de adormecer, sem fazer uma mudança brusca de uma hora para outra.</p>
+            </div>
+
+            <div style="background: white; padding: 25px 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(139, 121, 232, 0.08); border: 1px solid var(--border-color);">
+                <span class="card-tag">Aula <span class="num">04</span></span>
+                <h3 style="font-size: 1.2rem; color: var(--title-color); margin: 8px 0 8px 0; font-family: 'Playfair Display', serif;">Método Durma + sem Choro: passo a passo</h3>
+                <p style="font-size: 0.98rem; font-weight: 300; line-height: 1.6; margin: 0;">Um passo a passo prático para reduzir gradualmente a dependência exclusiva do colo ou do peito para adormecer. Sem abandonar seu bebê. Sem romper o vínculo. Sem precisar deixá-lo chorando sozinho.</p>
+            </div>
+
+            <div style="background: white; padding: 25px 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(139, 121, 232, 0.08); border: 1px solid var(--border-color);">
+                <span class="card-tag">Aula <span class="num">05</span></span>
+                <h3 style="font-size: 1.2rem; color: var(--title-color); margin: 8px 0 8px 0; font-family: 'Playfair Display', serif;">Consolidando o novo hábito</h3>
+                <p style="font-size: 0.98rem; font-weight: 300; line-height: 1.6; margin: 0;">Aprenda como continuar o processo depois dos primeiros dias e como tornar o berço cada vez mais familiar para o seu bebê.</p>
+            </div>
+
+            <div style="background: white; padding: 25px 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(139, 121, 232, 0.08); border: 1px solid var(--border-color);">
+                <span class="card-tag">Aula <span class="num">06</span></span>
+                <h3 style="font-size: 1.2rem; color: var(--title-color); margin: 8px 0 8px 0; font-family: 'Playfair Display', serif;">O que fazer quando houver retrocessos</h3>
+                <p style="font-size: 0.98rem; font-weight: 300; line-height: 1.6; margin: 0;">Saltos de desenvolvimento, mudanças na rotina, dentes, doenças e outras fases podem afetar o sono. Você vai aprender como lidar com esses momentos sem sentir que precisa começar tudo novamente.</p>
+            </div>
+        </div>
+
+        <!-- NOVO BOTÃO 1 (Após as aulas) -->
+        <div style="margin-top: 40px; text-align: center;">
+            <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn">QUERO APRENDER O PASSO A PASSO AGORA</a>
+        </div>
+    </section>
+
+    <!-- WHATSAPP GROUP HIGHLIGHT -->
+    <section style="background: linear-gradient(135deg, #f3eef8 0%, #ebdff0 100%); padding: 60px 20px; text-align: center; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div style="max-width: 800px; margin: 0 auto; background: white; padding: 40px 30px; border-radius: 24px; box-shadow: 0 15px 35px rgba(139, 121, 232, 0.15); border: 2px solid var(--purple-accent);">
+            <div style="font-size: 2.2rem; margin-bottom: 15px;">💬</div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--title-color); margin-bottom: 15px;">E você não vai precisar fazer isso sozinha</h2>
+            <p style="font-size: 1.05rem; font-weight: 300; line-height: 1.7; color: var(--text-dark); margin-bottom: 20px; text-align: left;">
+                Ao entrar no curso, você terá acesso imediato ao nosso <strong>grupo exclusivo no WhatsApp</strong> para tirar dúvidas, compartilhar experiências e receber orientação de perto.
+            </p>
+            <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn">QUERO FAZER PARTE DO DO COLO AO BERÇO</a>
+        </div>
+    </section>
+
+    <!-- ABOUT SPECIALIST -->
     <section class="about">
         <div class="about-container">
             <div class="about-photo-box">
@@ -946,154 +968,109 @@
             </div>
             <div class="about-content">
                 <h2>Prazer, eu sou a Paula Maia ❤️</h2>
-                <p>Sou especialista em sono infantil e dediquei minha trajetória a estudar o sono dos bebês e das crianças para ajudar famílias a terem noites mais tranquilas e uma rotina mais leve.</p>
-                <p>Além da experiência profissional, sou mãe de três filhos e sei que, na vida real, nem sempre existe rotina perfeita. Por isso, criei o método <strong>Durma + Sem Choro!</strong> baseado em estratégias práticas, acolhedoras e possíveis de aplicar no dia a dia.</p>
-                <p>Aqui, você vai aprender a entender o sono do seu bebê, identificar o que pode estar atrapalhando as noites e, passo a passo, ajudá-lo a dormir melhor e desenvolver mais autonomia para adormecer.</p>
-                <p>Sem culpa, sem fórmulas rígidas e sem precisar deixar de acolher o seu bebê.</p>
-                <p>Porque eu acredito que é possível buscar mais descanso sem abrir mão do colo, do carinho e do vínculo.</p>
-                <br>
-                <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn">Quero Transformar o Sono do Meu Bebê</a>
+                <p>Sou especialista em sono infantil, mãe de três filhos e criadora do método <strong>Durma + sem Choro</strong>.</p>
+                <p>Sei que na vida real existe cansaço, dias caóticos e bebês que precisam de acolhimento. Por isso, criei uma abordagem prática e respeitosa para ajudar sua família a conquistar noites tranquilas sem abrir mão do carinho e do vínculo.</p>
+            
+                <!-- NOVO BOTÃO 2 (Após a biografia) -->
+                <div style="margin-top: 25px;">
+                    <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn">GARANTIR MINHA VAGA NO CURSO</a>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="mission">
-        <blockquote>"Nossa missão é fornecer estratégias acolhedoras através do método Durma + sem Choro! para que cada bebê alcance um sono tranquilo, permitindo que as famílias prosperem e desfrutem de noites revigorantes juntas."</blockquote>
+        <blockquote>"Imagine daqui a alguns dias... Você segue a rotina, coloca seu bebê no berço e ele adormecer com tranquilidade, sem choro e sem estresse. Você recupera suas noites e sua paz."</blockquote>
         <div class="mission-full-image">
-            <img src="missao-bebe.jpg" alt="Bebê recém-nascido dormindo pacificamente com manta rosa">
+            <img src="missao-bebe.jpg" alt="Bebê dormindo pacificamente">
         </div>
     </section>
 
-    <section class="offerings">
-        <div class="section-header-line"></div>
-        <h2>O Que Você Vai Aprender nas 6 Aulas do Minicurso</h2>
-        <div class="offerings-grid">
-            <div class="card">
-                <div class="card-image">
-                    <img src="oferta-berco.jpg" alt="Aulas 01 e 02">
-                </div>
-                <div class="card-text">
-                    <span class="card-tag">Aulas 01 e 02</span>
-                    <h3>Entendendo o Sono & Rotina Ideal</h3>
-                    <p>Compreenda o funcionamento real do sono do bebê e prepare o ambiente e a rotina perfeita para facilitar o descanso.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="oferta-mae.jpg" alt="Aulas 03 e 04">
-                </div>
-                <div class="card-text">
-                    <span class="card-tag">Aulas 03 e 04</span>
-                    <h3>Método Durma + Passo a Passo</h3>
-                    <p>O método prático sem choro para remover a dependência exclusiva do colo e do peito com todo o carinho e segurança.</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image">
-                    <img src="oferta-bebe.jpg" alt="Aulas 05 e 06">
-                </div>
-                <div class="card-text">
-                    <span class="card-tag">Aulas 05 e 06</span>
-                    <h3>Consolidação de Hábitos & Retrocessos</h3>
-                    <p>Aprenda a consolidar o berço de vez, lidar com saltos e retrocessos e colocar o seu pequeno para dormir com autonomia.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="background: linear-gradient(135deg, #f3eef8 0%, #ebdff0 100%); padding: 60px 20px; text-align: center; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-        <div style="max-width: 800px; margin: 0 auto; background: white; padding: 40px 30px; border-radius: 24px; box-shadow: 0 15px 35px rgba(139, 121, 232, 0.15); border: 2px solid var(--purple-accent);">
-            <div style="font-size: 2.2rem; margin-bottom: 15px;">💬</div>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--title-color); margin-bottom: 15px;">Grupo Exclusivo no WhatsApp</h2>
-            <p style="font-size: 1.05rem; font-weight: 300; line-height: 1.7; color: var(--text-dark); margin-bottom: 25px;">
-                Você não estará sozinha nessa jornada! Ao garantir sua vaga hoje, você ganha acesso imediato ao nosso <strong>grupo exclusivo no WhatsApp</strong> para trocar experiências com outras mães e tirar todas as suas dúvidas de forma rápida e segura.
-            </p>
-            <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn">Quero Meu Acesso com Grupo no WhatsApp</a>
-        </div>
-    </section>
-
+    <!-- PRICING & BONUSES -->
     <section class="pricing" id="oferta">
         <div class="section-header-line"></div>
-        <h2>Garanta Seu Acesso Agora</h2>
-        <p>Transforme as noites da sua casa com um método prático, direto ao ponto e desenvolvido especialmente para mães exaustas.</p>
+        <h2>Tudo isso por apenas R$<span class="num">67</span></h2>
+        <p>E para deixar sua aplicação ainda mais fácil, você também recebe bônus exclusivos!</p>
         
+        <div style="max-width: 750px; margin: 30px auto; text-align: left; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(139,121,232,0.1); border: 1px solid var(--border-color);">
+            <h3 style="color: var(--title-color); margin-bottom: 20px; font-family: 'Playfair Display', serif; text-align: center;">🎁 VOCÊ TAMBÉM RECEBE:</h3>
+            <p style="margin-bottom: 15px;"><strong>BÔNUS <span class="num">01</span> — Tabela de Janela de Sono</strong><br><span style="font-weight: 300;">Entenda perfeitamente os períodos de sono e vigília do seu bebê.</span></p>
+            <p style="margin-bottom: 15px;"><strong>BÔNUS <span class="num">02</span> — Guia de Sonecas por Idade</strong><br><span style="font-weight: 300;">Consulte rapidamente a quantidade ideal de sonecas para cada fase.</span></p>
+            <p style="margin-bottom: 0;"><strong>BÔNUS <span class="num">03</span> — Grupo Exclusivo no WhatsApp</strong><br><span style="font-weight: 300;">Suporte direto para tirar dúvidas durante a aplicação.</span></p>
+        </div>
+
         <div class="price-box">
-            <div class="price-badge">Minicurso Prático 100% Gravado</div>
-            <h3>Do Colo ao Berço (Acesso Imediato)</h3>
-            <p><strong>Aulas 100% Gravadas</strong> para você assistir, pausar e rever quantas vezes quiser, no horário em que precisar. Sem compromisso de agenda ou datas marcadas.</p>
-            <p><strong>🎁 Bônus Inclusos:</strong> Você também vai receber a <strong>Tabela Oficial de Janela de Sono</strong>, o guia de <strong>Quantidade de Sonecas por Idade</strong> e acesso ao nosso <strong>Grupo Exclusivo no WhatsApp</strong> para tirar todas as suas dúvidas diretamente com suporte especializado!</p>
-            <div class="price">R$ 67,00</div>
-            <p>ou em até 12x nas principais formas de pagamento.</p>
-            <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn" style="font-size: 0.92rem; padding: 16px 20px;">Quero Acesso Imediato Agora</a>
+            <div class="price-badge">DO COLO AO BERÇO</div>
+            <h3>Curso 100% gravado + bônus + grupo</h3>
+            <p style="text-align: left; margin-bottom: 20px;">
+                <strong>O que está incluído:</strong><br>
+                ✓ <span class="num">6</span> aulas práticas e diretas<br>
+                ✓ Método Durma + sem Choro<br>
+                ✓ Ferramentas e guias bônus<br>
+                ✓ Acesso imediato &bull; Acesso vitalício
+            </p>
+            <div style="text-decoration: line-through; color: #888; font-size: 1.1rem; margin-bottom: -5px;">DE R$<span class="num">97</span></div>
+            <div class="price">POR APENAS R$<span class="num">67</span></div>
+            <p>ou em até <span class="num">12</span>x no cartão</p>
             
-            <div class="guarantee-box">
-                🔒 <strong>Garantia Incondicional de 7 Dias:</strong> Teste o método sem compromisso. Se não vir diferença, seu dinheiro de volta.
+            <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn" style="font-size: 0.95rem; padding: 16px 20px;">QUERO MEU ACESSO AO DO COLO AO BERÇO</a>
+            
+            <p style="font-size: 0.8rem; color: #777; margin-top: 15px;">🔒 Pagamento seguro pela Kiwify</p>
+
+            <div class="guarantee-box" style="margin-top: 25px; text-align: left; padding: 20px;">
+                <h4 style="color: var(--title-color); margin-bottom: 8px; font-family: 'Playfair Display', serif;">🛡️ GARANTIA DE <span class="num">7</span> DIAS</h4>
+                <p style="margin: 0; font-size: 0.9rem; font-weight: 300;">
+                    Teste o conteúdo por <span class="num">7</span> dias. Se perceber que não se adequa à sua realidade, basta solicitar o reembolso integral na plataforma, sem burocracia. O risco é todo meu.
+                </p>
             </div>
         </div>
     </section>
 
+    <!-- FAQ SECTION -->
     <section class="faq-section">
         <div class="section-header-line"></div>
         <div class="faq-container">
-            <h2>Dúvidas Frequentes</h2>
+            <h2>Perguntas frequentes</h2>
 
             <div class="faq-card">
-                <h3>Como e quando recebo o acesso ao curso?</h3>
-                <p>
-                    O acesso é <strong>100% imediato</strong>! Assim que o seu pagamento for aprovado (via PIX ou cartão de crédito), você receberá automaticamente um e-mail da Kiwify com o seu login e senha para entrar na plataforma e começar a assistir às aulas na mesma hora.
-                </p>
+                <h3>Para qual idade o curso é indicado?</h3>
+                <p>Para bebês de <span class="num">0</span> a <span class="num">2</span> anos que apresentam dificuldades com o adormecimento e a transição para o berço.</p>
             </div>
 
             <div class="faq-card">
-                <h3>O curso serve para qual idade de bebê?</h3>
-                <p>
-                    O método "Do Colo ao Berço" foi desenhado especialmente para ajudar mães que enfrentam dificuldades com o sono de bebês <strong>de até dois anos</strong>, trazendo técnicas práticas e humanizadas para restaurar noites de sono reais.
-                </p>
+                <h3>Meu bebê só dorme no colo ou mamando. Funciona?</h3>
+                <p>Sim! O curso aborda exatamente a dependência do colo e peito, ensinando novas associações de forma gradual.</p>
             </div>
 
             <div class="faq-card">
-                <h3>Por quanto tempo terei acesso às aulas?</h3>
-                <p>
-                    O acesso é vitalício! Você poderá assistir no seu próprio ritmo, rever as aulas sempre que houver uma nova fase ou regressão de sono do seu bebê.
-                </p>
+                <h3>Preciso deixar meu bebê chorando sozinho?</h3>
+                <p>De forma alguma. O método é 100% acolhedor e respeitoso, sem exigir que você abandone seu bebê chorando.</p>
             </div>
 
             <div class="faq-card">
-                <h3>O método utiliza técnicas que deixam o bebê chorando sozinho?</h3>
-                <p>
-                    De forma alguma! O método <strong>Durma + sem Choro!</strong> é totalmente acolhedor e baseado na neurociência do sono. Respeitamos o vínculo entre mãe e bebé, sem necessidade de deixar a criança chorando sozinha no berço.
-                </p>
+                <h3>Como recebo o acesso?</h3>
+                <p>O acesso é liberado automaticamente por e-mail logo após a confirmação do pagamento na Kiwify.</p>
             </div>
 
             <div class="faq-card">
-                <h3>Preciso de muito tempo livre para acompanhar o minicurso?</h3>
-                <p>
-                    Não! As aulas são gravadas em formato direto ao ponto e objetivo, pensadas justamente para rotinas de mães exaustas. Pode assistir aos poucos, nos momentos em que o bebê estiver a dormir ou a descansar.
-                </p>
+                <h3>Por quanto tempo terei acesso?</h3>
+                <p>O acesso é vitalício. Você pode assistir e rever as aulas quantas vezes precisar.</p>
             </div>
+        </div>
 
-            <div class="faq-card">
-                <h3>O minicurso funciona para bebés que acordam a toda a hora à noite?</h3>
-                <p>
-                    Sim. O curso aborda diretamente as causas dos despertares noturnos frequentes, ajudando a ensinar o bebé a adormecer com autonomia e a reduzir drasticamente as interrupções durante a noite.
-                </p>
-            </div>
-
-            <div class="faq-card">
-                <h3>Como funciona a garantia de 7 dias?</h3>
-                <p>
-                    Se por qualquer motivo achar que o método não se aplica à sua realidade ou não vir resultados na rotina da sua casa, basta solicitar o reembolso dentro de 7 dias através da plataforma que o valor é devolvido integralmente, sem burocracia.
-                </p>
-            </div>
+        <!-- NOVO BOTÃO 3 (Após o FAQ) -->
+        <div style="margin-top: 40px; text-align: center;">
+            <a href="https://pay.kiwify.com.br/GRBixhq" target="_blank" class="btn">QUERO TRANSFORMAR O SONO DO MEU BEBÊ</a>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-brand">
-            Curso Do Colo ao Berço com Paula Maia &bull; Consultoria Infantil
+        <div style="max-width: 800px; margin: 0 auto 30px auto; text-align: center; font-style: italic; font-size: 1.1rem; color: #fff;">
+            "Seu bebê não precisa aprender a dormir sozinho. Ele pode aprender novas formas de adormecer enquanto continua sendo acolhido."
         </div>
         <div class="footer-disclaimer">
-            Este conteúdo é independente e não possui vínculo institucional com plataformas de redes sociais. Os depoimentos apresentados refletem experiências individuais reais, sendo os resultados variáveis de acordo com a rotina e o contexto de cada família.
+            <strong>IMPORTANTE:</strong> Conteúdo educativo que não substitui avaliação médica ou acompanhamento profissional individualizado.
         </div>
         <div class="footer-links">
             <a href="mailto:paula_mc19@yahoo.com.br">Política de Privacidade</a>
@@ -1103,7 +1080,7 @@
             <a href="mailto:paula_mc19@yahoo.com.br">Contato</a>
         </div>
         <div class="footer-copyright">
-            &copy; 2026 Paula Maia. Todos os direitos reservados.
+            &copy; <span class="num">2026</span> Paula Maia. Todos os direitos reservados.
         </div>
     </footer>
 
